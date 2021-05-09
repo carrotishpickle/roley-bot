@@ -5,6 +5,10 @@ const client = new Discord.Client();
 const fs = require('fs').promises;
 
 // Function defining =>
+function killBot( error ) {
+	throw new Error(error);
+}
+
 function login() {
   client.login(config.token);
 };
@@ -45,6 +49,28 @@ client.on('message', message => {
 		message.channel.send('Your UID is' + ' ' + message.author.id);
 		commandConfirm('UID display', message.author.id);
 	};
+});
+
+
+// KILL COMMAND - DOESN'T WORK PROPERLY, UNSTABLE!
+client.on('message', message => {
+	if (message.content === config.prefix + 'killbot') {
+		messageContents = message;
+
+		var killcmdAuthorID;
+		var ondraAuthor;
+	
+		killcmdAuthorID = message.author.id;
+
+		ondraAuthor = killcmdAuthorID.includes(config.ondraID);
+		
+		if (ondraAuthor === true) {
+			message.channel.send('Attempting to send kill PID to NodeJS...');
+			console.log('Attempting to send kill PID to NodeJS...');
+			commandConfirm('Bot kill command', message.author.id);
+			killBot( 'Bot killed' );
+	};
+};
 });
 
 login();
