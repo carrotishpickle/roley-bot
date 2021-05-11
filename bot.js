@@ -20,11 +20,11 @@ function commandConfirm( command, auid ) {
 // <= Function defining
 
 client.once('ready', () => {
-    client.user.setActivity('with my human friends',{type: 'PLAYING'});
+	console.log('Ready!');
 });
 
 client.once('ready', () => {
-	console.log('Ready!');
+    client.user.setActivity('with my human friends',{type: 'PLAYING'});
 });
 
 client.on('message', message => {
