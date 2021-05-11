@@ -5,7 +5,7 @@ const client = new Discord.Client();
 const fs = require('fs').promises;
 
 // Function defining =>
-function killBot( error ) {
+function thE( error ) {
 	throw new Error(error);
 }
 
@@ -18,6 +18,10 @@ function commandConfirm( command, auid ) {
 };
 
 // <= Function defining
+
+client.once('ready', () => {
+    client.user.setActivity('with my human friends',{type: 'PLAYING'});
+});
 
 client.once('ready', () => {
 	console.log('Ready!');
@@ -68,7 +72,7 @@ client.on('message', message => {
 			message.channel.send('Attempting to send kill PID to NodeJS...');
 			console.log('Attempting to send kill PID to NodeJS...');
 			commandConfirm('Bot kill command', message.author.id);
-			killBot( 'Bot killed' );
+			thE( 'Bot killed' );
 	};
 };
 });
