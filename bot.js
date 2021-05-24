@@ -38,6 +38,12 @@ client.on('message', message => {
 })
 
 client.on('message', message => {
+	if (message.content === config.prefix + 'pinvite') {
+		message.channel.send('Toto je stálý invite link, @<' + message.author.id + '>:\n' + config.permaInvite);
+	};
+});
+
+client.on('message', message => {
 	if (message.content === config.prefix + 'ping') {
 		message.channel.send('Pong!');
 		commandConfirm('Ping Pong', message.author.id);
@@ -64,14 +70,9 @@ client.on('message', message => {
 		commandConfirm('UID display', message.author.id);
 	};
 });
-// PERMA INVITE
-client.on('message', message => {
-	if (message.content === config.prefix + 'pinvite') {
-		message.channel.send(config.permaInvite);
-	};
-});
 
-// KILL COMMAND
+
+// KILL COMMAND - DOESN'T WORK PROPERLY, UNSTABLE!
 client.on('message', message => {
 	if (message.content === config.prefix + 'killbot') {
 		messageContents = message;
@@ -92,13 +93,30 @@ client.on('message', message => {
 };
 });
 
+client.on('message', message => {
+	if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+
+	var args = message.content.slice(config.prefix.length).trim().split(' ');
+	var command = args.shift().toLowerCase();
+
+	if (command === 'argumenty') {
+		if (!args.length) {
+			return message.channel.send (`Nepopsal jsi žádné argumenty!`);
+		} else if (args[0] === 'bruh') {
+			return message.channel.send('bruuh');
+		}
+
+		message.channel.send(`První argument: ${args[0]}`);
+	}
+});
+
 /*
 client.on('message', message => {
 	if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
 	const args = message.content.slice(config.prefix.length).trim().split(' ');
 	const command = args.shift().toLowerCase();
-	
+
 	if (command === 'ping') {
 		message.channel.send('Pong.');
 	} else if (command === 'args-info') {
@@ -126,5 +144,4 @@ client.on('message', message => {
 */
 
 login();
-}
 // Start the bot with "node ." or "node bot.js"
