@@ -14,11 +14,11 @@ function thE( error ) {
 
 function login() {
   client.login(config.token);
-};
+}
 
 function commandConfirm( command, auid ) {
   console.log('Command operation, specifically' + ' ' + command + ' ' + 'completed succesfully, ran by user' + ' ' + auid);
-};
+}
 
 // <= Function defining
 
@@ -62,7 +62,7 @@ client.on('message', message => {
 	else if (message.content === config.prefix + 'uid') {
 		message.channel.send('Your UID is' + ' ' + message.author.id);
 		commandConfirm('UID display', message.author.id);
-	};
+	}
 });
 // PERMA INVITE
 client.on('message', message => {
