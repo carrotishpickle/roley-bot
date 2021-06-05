@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const config = require('./configfiles/config.json');
-const stats = require('./configfiles/KARLSON/STATS/ondrodrak.json');
 const client = new Discord.Client();
 const fs = require('fs').promises;
 
@@ -11,11 +10,11 @@ function killBot( error ) {
 
 function login() {
   client.login(config.token);
-};
+}
 
 function commandConfirm( command, auid ) {
   console.log('Command operation, specifically' + ' ' + command + ' ' + 'completed succesfully, ran by user' + ' ' + auid);
-};
+}
 
 // <= Function defining
 
@@ -48,7 +47,7 @@ client.on('message', message => {
 	else if (message.content === config.prefix + 'uid') {
 		message.channel.send('Your UID is' + ' ' + message.author.id);
 		commandConfirm('UID display', message.author.id);
-	};
+	}
 });
 
 
@@ -69,8 +68,8 @@ client.on('message', message => {
 			console.log('Attempting to send kill PID to NodeJS...');
 			commandConfirm('Bot kill command', message.author.id);
 			killBot( 'Bot killed' );
-	};
-};
+	}
+}
 });
 
 login();
