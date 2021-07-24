@@ -1,5 +1,4 @@
-# The development of Roley is currently **ON HOLD**. Updates might be *very* occasionally pushed,
-# but I'm taking a bit of a break from computers at the moment to clear my mind. ty for understanding <3  
+# The development of Roley is currently **ON HOLD**. Updates might be *very* occasionally pushed, but I'm taking a bit of a break from computers at the moment to clear my mind. ty for understanding <3  
 
 *****
 
