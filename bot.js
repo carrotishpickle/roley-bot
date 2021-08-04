@@ -30,6 +30,7 @@ client.once('ready', () => {
 client.on('message', message => {
 	if (message.content === config.prefix + 'help') {
 		message.reply('Seznam příkazů: \n **=help**, vrátí všechny možné příkazy. \n **=ping**, vrátí odpověď "Pong!" \n **=time**, vrátí čas a datum \n **=uid** nebo **=id**, vrátí tvé uživatelské Discord ID \n **=pinvite**, vrátí stálý invite link do serveru \n **=killbot**, ukončí bota, **pouze pro majitele bota** \n *aktuální prefix je' + ' ' + config.prefix + '.')
+		commandConfirm('Help', message.author.id);
 	}
 });
 

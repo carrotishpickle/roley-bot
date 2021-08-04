@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/carrotishpickle/roley-discord-bot#readme",
   "dependencies": {
+    "@ondrodrak/jscalc": "github:ondrodrak/jscalc",
     "bufferutil": "^4.0.3",
-    "discord.js": "^12.5.1",
+    "discord.js": "^12.5.3",
+    "jscalc": "github:ondrodrak/jscalc",
     "vim": "^0.1.0"
   }
 }
