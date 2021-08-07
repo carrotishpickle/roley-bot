@@ -104,6 +104,7 @@ client.on('message', message => {
 
 });
 
+/*
 client.on('message', message => {
 	if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
@@ -112,14 +113,15 @@ client.on('message', message => {
 
 	if (command === 'argumenty') {
 		if (!args.length) {
-			return message.channel.send (`Nepopsal jsi žádné argumenty!`);
+			return message.channel.send ('Nepopsal jsi žádné argumenty!');
 		} else if (args[0] === 'bruh') {
 			return message.channel.send('bruuh');
 		}
 
-		message.channel.send(`První argument: ${args[0]}`);
+		message.channel.send('První argument: ${args[0]}');
 	}
 });
+*/
 
 login();
 // Start the bot with "node ." or "node bot.js"
